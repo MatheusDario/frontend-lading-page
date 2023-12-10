@@ -22,6 +22,10 @@ export const theme = {
       large: '2rem',
       superLarge: '5.5rem',
     },
+    family: {
+      default: "'Lato', sans-serif",
+      title: "'Montserrat', sans-serif",
+    },
   },
   breakpoints: {
     mobile: '(max-width: 720px)',
