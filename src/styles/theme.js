@@ -16,11 +16,13 @@ export const theme = {
   },
   font: {
     sizes: {
-      extraSmall: '1.8rem',
+      xmall: '.8rem',
       small: '1.6rem',
-      medium: '2.2rem',
-      large: '2rem',
-      superLarge: '5.5rem',
+      medium: '2.4rem',
+      large: '3.2rem',
+      xlarge: '4.0rem',
+      xxlarge: '4.8rem',
+      huge: '5.6rem',
     },
     family: {
       default: "'Lato', sans-serif",
