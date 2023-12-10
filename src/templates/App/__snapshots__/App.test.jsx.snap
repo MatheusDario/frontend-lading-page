@@ -8,6 +8,6 @@ exports[`should test 1`] = `
 <h1
   class="c0"
 >
-  Test
+  Hello World
 </h1>
 `;
