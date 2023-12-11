@@ -11,5 +11,5 @@ export const App = () => {
 };
 
 App.propTypes = {
-  children: P.node.isRequired,
+  children: P.node,
 };
