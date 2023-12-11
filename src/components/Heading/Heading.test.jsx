@@ -62,13 +62,17 @@ describe('<Heading />', () => {
   });
   /*
   it('should correct font-size when using mobile', () => {
-    const { debug } = renderTheme(<Heading size="huge">Texto</Heading>);
+    const { debug } = renderTheme(
+      <Heading as="h2" size="huge">
+        Texto
+      </Heading>,
+    );
     const heading = screen.getByRole('heading', { name: 'Texto' });
     debug();
 
     expect(screen.getByRole('heading', { name: 'Texto' })).toHaveStyleRule(
       'font-size',
-      theme.font.sizes.xlarge,
+      theme.font.sizes.huge,
       {
         media: theme.breakpoints.mobile,
       },

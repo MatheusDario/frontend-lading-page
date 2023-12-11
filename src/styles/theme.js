@@ -30,6 +30,6 @@ export const theme = {
     },
   },
   breakpoints: {
-    mobile: '(max-width: 768px)',
+    mobile: '@media (max-width: 768px)',
   },
 };
