@@ -12,17 +12,24 @@ const TitleSize = {
   `,
   huge: (theme) => css`
     font-size: ${theme.font.sizes.huge};
+    ${MediaFont(theme)};
   `,
 };
 
-const TitleCase = (uppercase) => css`
-  text-transform: ${uppercase ? 'uppercase' : 'none'};
+const TitleCase = ($uppercase) => css`
+  text-transform: ${$uppercase ? 'uppercase' : 'none'};
+`;
+
+const MediaFont = (theme) => css`
+  @media ${theme.breakpoints.mobile} {
+    font-size: ${theme.font.sizes.xlarge};
+  }
 `;
 
 export const Title = styled.h1`
- ${({ theme, colorDark, size, uppercase }) => css`
-  color: ${colorDark ? theme.colors.blue : theme.colors.white};
+ ${({ theme, $colordark, size, $uppercase }) => css`
+  color: ${$colordark ? theme.colors.blue : theme.colors.white};
   ${TitleSize[size](theme)};
-  ${TitleCase(uppercase)};
+  ${TitleCase($uppercase)};
  `}
 `;
