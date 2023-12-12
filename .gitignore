@@ -13,7 +13,7 @@ node_modules
 /build
 
 # testing
-/coverage
+./coverage
 storybook
 dist
 dist-ssr

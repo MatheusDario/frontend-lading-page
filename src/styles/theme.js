@@ -8,6 +8,7 @@ export const theme = {
     lightGrenn: '#6ab04c',
     lightGray: ' #cecece',
     red: '#dc143c',
+    black: '#000000',
   },
   spacing: {
     xmall: '.8rem',
