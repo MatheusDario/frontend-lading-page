@@ -1,4 +1,3 @@
-
 import { SectionContainer } from '.';
 import { renderTheme } from '../../styles/render-theme';
 

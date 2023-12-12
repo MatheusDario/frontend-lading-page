@@ -67,25 +67,24 @@ describe('<Heading />', () => {
       'font-size': theme.font.sizes.huge,
     });
   });
-  /*
+
   it('should correct font-size when using mobile', () => {
-    const { debug } = renderTheme(
+    renderTheme(
       <Heading as="h2" size="huge">
         Texto
       </Heading>,
     );
     const heading = screen.getByRole('heading', { name: 'Texto' });
-    debug();
 
     expect(screen.getByRole('heading', { name: 'Texto' })).toHaveStyleRule(
       'font-size',
-      theme.font.sizes.huge,
+      theme.font.sizes.xlarge,
       {
-        media: theme.breakpoints.mobile,
+        media: theme.breakpoints.tests,
       },
     );
   });
-  */
+
   it('should render uppercase letters', () => {
     renderTheme(<Heading $uppercase>Texto</Heading>);
     const heading = screen.getByRole('heading', { name: 'Texto' });
