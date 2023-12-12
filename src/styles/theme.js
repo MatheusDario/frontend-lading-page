@@ -4,9 +4,9 @@ export const theme = {
     blue: '#023059',
     lightblue: '#065473',
     aquablue: '#08748c',
-    gren: '#02735e',
-    lightGrenn: '#6ab04c',
-    lightGray: ' #cecece',
+    green: '#02735e',
+    lightgrenn: '#6ab04c',
+    lightgray: ' #cecece',
     red: '#dc143c',
     black: '#000000',
   },
@@ -35,6 +35,7 @@ export const theme = {
     },
   },
   breakpoints: {
-    mobile: '@media (max-width: 768px)',
+    mobile: '@media (max-width:768px)',
+    tests: '(max-width:768px)',
   },
 };
