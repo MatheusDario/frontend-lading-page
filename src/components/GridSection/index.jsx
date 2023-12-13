@@ -8,12 +8,15 @@ export const GridSection = ({ title, description, $background, grid }) => {
   return (
     <SectionBackground $background={$background}>
       <Styled.Container>
-        <Heading $colordark={!$background}>{title}</Heading>
+        <Heading as="h2" $colordark={!$background}>
+          {title}
+        </Heading>
         <Text>{description}</Text>
         <Styled.Grid>
           {grid.map((el) => (
             <Styled.GridElement key={el.title}>
               <Heading
+                as="h3"
                 $uppercase={false}
                 size="medium"
                 $colordark={!$background}

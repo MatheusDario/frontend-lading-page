@@ -14,7 +14,9 @@ export const GridTwoColumns = ({
     <SectionBackground $background={$background}>
       <Styled.Container $background={$background}>
         <Styled.TextContainer>
-          <Heading $colordark={!$background}>{title}</Heading>
+          <Heading as="h2" $colordark={!$background}>
+            {title}
+          </Heading>
           <Text>{text}</Text>
         </Styled.TextContainer>
         <Styled.ImgContainer>
