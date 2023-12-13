@@ -26,7 +26,6 @@ exports[`<SectionBackground /> should render with barkground dark 1`] = `
     >
       Children
     </div>
-    ;
   </div>
 </div>
 `;
@@ -55,7 +54,6 @@ exports[`<SectionBackground /> should render with barkground light 1`] = `
     >
       Children
     </div>
-    ;
   </div>
 </div>
 `;

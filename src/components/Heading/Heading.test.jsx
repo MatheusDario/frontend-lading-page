@@ -94,6 +94,15 @@ describe('<Heading />', () => {
     });
   });
 
+  it('should render lowercase letters', () => {
+    renderTheme(<Heading $uppercase={false}>Texto</Heading>);
+    const heading = screen.getByRole('heading', { name: 'Texto' });
+
+    expect(heading).toHaveStyle({
+      'text-transform': 'none',
+    });
+  });
+
   it('should render correct elemente', () => {
     const { container } = renderTheme(<Heading as="h4">Texto</Heading>);
     const heading = screen.getByRole('heading', { name: 'Texto' });

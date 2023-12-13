@@ -21,6 +21,7 @@ exports[`<GridTwoColumns /> should render 1`] = `
 
 .c7 {
   width: 100%;
+  height: auto;
 }
 
 .c0 {
@@ -102,7 +103,6 @@ exports[`<GridTwoColumns /> should render 1`] = `
         </div>
       </div>
     </div>
-    ;
   </div>
 </div>
 `;

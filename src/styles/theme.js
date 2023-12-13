@@ -5,7 +5,7 @@ export const theme = {
     lightblue: '#065473',
     aquablue: '#08748c',
     green: '#02735e',
-    lightgrenn: '#6ab04c',
+    lightgreen: '#6ab04c',
     lightgray: ' #cecece',
     red: '#dc143c',
     black: '#000000',
