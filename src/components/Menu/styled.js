@@ -19,6 +19,8 @@ export const Container = styled.div`
     border-bottom: ${theme.colors.lightgray};
     background: ${theme.colors.white};
 
+    border-bottom: 1px solid lightgray;
+
     > ${SectionContainer} {
       padding-top: 0;
       padding-bottom: 0;
@@ -79,6 +81,7 @@ export const Button = styled.button`
     border-radius: .5rem;
     background-color: ${theme.colors.green};
     color: ${theme.colors.white};
+    opacity: .7;
     display: none;
     pointer-events: ${$visible ? 'none' : 'all'};
 

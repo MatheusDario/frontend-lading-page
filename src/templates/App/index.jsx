@@ -1,13 +1,11 @@
-import { Heading } from '../../components/Heading';
+/* eslint-disable no-unused-vars */
+import { Base } from '../Base';
+import { mockBase } from '../Base/mock';
 import * as Styled from './styles';
 import P from 'prop-types';
 
 export const App = () => {
-  return (
-    <Styled.Container>
-      <Heading>Hello World</Heading>
-    </Styled.Container>
-  );
+  return <Base {...mockBase} />;
 };
 
 App.propTypes = {

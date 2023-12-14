@@ -2,9 +2,10 @@
 
 exports[`<GoTop /> should render a go to top button 1`] = `
 .c0 {
-  background-color: #023059;
+  background-color: #02735e;
+  color: #f0f0f2;
   border-radius: 50%;
-  opacity: .6;
+  opacity: .7;
   position: fixed;
   display: flex;
   align-items: center;

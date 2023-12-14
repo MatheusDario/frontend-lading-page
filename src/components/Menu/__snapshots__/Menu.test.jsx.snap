@@ -22,6 +22,7 @@ exports[`<Menu /> should not render links 1`] = `
   transition: all 300ms ease-in-out;
   border-bottom: #cecece;
   background: #f0f0f2;
+  border-bottom: 1px solid lightgray;
 }
 
 .c2 >.c3 {
@@ -51,6 +52,7 @@ exports[`<Menu /> should not render links 1`] = `
   border-radius: .5rem;
   background-color: #02735e;
   color: #f0f0f2;
+  opacity: .7;
   display: none;
   pointer-events: all;
 }
@@ -210,6 +212,7 @@ exports[`<Menu /> should render logo and main nav menu 1`] = `
   transition: all 300ms ease-in-out;
   border-bottom: #cecece;
   background: #f0f0f2;
+  border-bottom: 1px solid lightgray;
 }
 
 .c2 >.c3 {
@@ -239,6 +242,7 @@ exports[`<Menu /> should render logo and main nav menu 1`] = `
   border-radius: .5rem;
   background-color: #02735e;
   color: #f0f0f2;
+  opacity: .7;
   display: none;
   pointer-events: all;
 }

@@ -26,6 +26,8 @@ exports[`<GridSection /> should render with background 1`] = `
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 3.2rem;
+  overflow: hidden;
+  width: 100%;
 }
 
 .c7 .c5 {
@@ -77,6 +79,12 @@ exports[`<GridSection /> should render with background 1`] = `
 @media (max-width:768px) {
   .c9 {
     font-size: 4.0rem;
+  }
+}
+
+@media (max-width:768px) {
+  .c7 {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -187,6 +195,8 @@ exports[`<GridSection /> should render without background 1`] = `
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 3.2rem;
+  overflow: hidden;
+  width: 100%;
 }
 
 .c7 .c5 {
@@ -238,6 +248,12 @@ exports[`<GridSection /> should render without background 1`] = `
 @media (max-width:768px) {
   .c9 {
     font-size: 4.0rem;
+  }
+}
+
+@media (max-width:768px) {
+  .c7 {
+    grid-template-columns: 1fr;
   }
 }
 
