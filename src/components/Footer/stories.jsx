@@ -4,7 +4,7 @@ export default {
   title: 'Footer',
   component: Footer,
   args: {
-    html: `<p>
+    footerHtml: `<p>
     Desenvolvido por
     <a
       rel="nofollow"
