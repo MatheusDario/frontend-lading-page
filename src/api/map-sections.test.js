@@ -1,4 +1,5 @@
 import {
+  mapImageGrid,
   mapSectionContent,
   mapSectionTwoColumns,
   mapSections,
@@ -108,7 +109,7 @@ describe('map-sections', () => {
   it('should map grid section /or grid text was data', () => {
     const data = mapTextGrid();
     expect(data.background).toBe(false);
-    expect(data.component).toBe('');
+    expect(data.component).toBe('section.section-grid-text');
     expect(data.sectionid).toBe('');
     expect(data.title).toBe('');
     expect(data.description).toBe('');
@@ -150,7 +151,7 @@ describe('map-sections', () => {
       image_grid: [],
     });
     expect(data.background).toBe(true);
-    expect(data.component).toBe('section.section-grid');
+    expect(data.component).toBe('section.section-grid-text');
     expect(data.sectionid).toBe('description');
     expect(data.title).toBe('DESCRIÇÃO DOS PRINCIPAIS TRABALHOS');
     expect(data.description).toBe(
@@ -160,5 +161,98 @@ describe('map-sections', () => {
     expect(data.grid[0].description).toBe(
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus quibusdam laborum officiis iste beatae obcaecati repellat, et veritatis provident culpa iusto id sequi corrupti magni repellendus, placeat corporis esse architecto.',
     );
+  });
+
+  it('should map grid image without data', () => {
+    const data = mapImageGrid();
+    expect(data.background).toBe(false);
+    expect(data.component).toBe('section.section-grid-image');
+    expect(data.sectionid).toBe('');
+    expect(data.title).toBe('');
+    expect(data.description).toBe('');
+    //expect(data.grid).toEqual([]);
+  });
+
+  it('should map grid image with data', () => {
+    const data = mapImageGrid({
+      id: 2,
+      __component: 'section.section-grid',
+      title: 'GALERIA',
+      description: 'Breve descrição',
+      metada: {
+        id: 4,
+        name: 'gallery',
+        section_id: 'gallery',
+        background: false,
+      },
+      text_grid: [],
+      image_grid: [
+        {
+          id: 1,
+          images: {
+            data: [
+              {
+                id: 5,
+                attributes: {
+                  name: 'ferrari.jpg',
+                  alternativeText: null,
+                  url: 'https://res.cloudinary.com/dlsrwvbeo/image/upload/v1702167564/ferrari_b04d5b11bc.jpg',
+                },
+              },
+              {
+                id: 6,
+                attributes: {
+                  name: 'bmw.jpg',
+                  alternativeText: null,
+                  url: 'https://res.cloudinary.com/dlsrwvbeo/image/upload/v1702167564/bmw_653b2050bc.jpg',
+                },
+              },
+              {
+                id: 7,
+                attributes: {
+                  name: 'lamborginhi.jpg',
+                  alternativeText: null,
+                  url: 'https://res.cloudinary.com/dlsrwvbeo/image/upload/v1702167564/lamborginhi_aa4b0d94c3.jpg',
+                },
+              },
+              {
+                id: 8,
+                attributes: {
+                  name: 'mercedes.jpg',
+                  alternativeText: null,
+                  url: 'https://res.cloudinary.com/dlsrwvbeo/image/upload/v1702167564/mercedes_cd10b1e920.jpg',
+                },
+              },
+              {
+                id: 9,
+                attributes: {
+                  name: 'road.jpg',
+                  alternativeText: null,
+                  url: 'https://res.cloudinary.com/dlsrwvbeo/image/upload/v1702167565/road_fae120670f.jpg',
+                },
+              },
+              {
+                id: 10,
+                attributes: {
+                  name: 'audi.jpg',
+                  alternativeText: null,
+                  url: 'https://res.cloudinary.com/dlsrwvbeo/image/upload/v1702167565/audi_ca65926b59.jpg',
+                },
+              },
+            ],
+          },
+        },
+      ],
+    });
+    expect(data.background).toBe(false);
+    expect(data.component).toBe('section.section-grid-image');
+    expect(data.sectionid).toBe('gallery');
+    expect(data.title).toBe('GALERIA');
+    expect(data.description).toBe('Breve descrição');
+    expect(data.grid[0].srcImg[1]).toEqual(
+      'https://res.cloudinary.com/dlsrwvbeo/image/upload/v1702167564/bmw_653b2050bc.jpg',
+    );
+    expect(data.grid[0].altText[0]).toEqual(null);
+    //expect(data.grid[0]).toEqual('');
   });
 });

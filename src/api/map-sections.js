@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 export const mapSections = (sections = []) => {
   return sections.map((section) => {
     if (section.__component === 'section.section-two-columns') {
@@ -17,7 +18,7 @@ export const mapSections = (sections = []) => {
         return mapTextGrid(section);
       }
       if (image_grid.length > 0) {
-        //return mapImageGrid(section);
+        return mapImageGrid(section);
       }
     }
   });
@@ -61,6 +62,7 @@ export const mapSectionContent = (section = {}) => {
 
 export const mapTextGrid = (section = {}) => {
   const {
+    // eslint-disable-next-line no-unused-vars
     __component: component = '',
     title = '',
     description = '',
@@ -69,11 +71,48 @@ export const mapTextGrid = (section = {}) => {
   } = section;
 
   return {
-    component,
+    component: 'section.section-grid-text',
     title,
     description,
     background,
     grid,
     sectionid,
+  };
+};
+
+export const mapImageGrid = (section = {}) => {
+  const {
+    __component: component = '',
+    title = '',
+    description = '',
+    image_grid: grid = [],
+    metada: { background = false, section_id: sectionid = '' } = '',
+  } = section;
+
+  return {
+    component: 'section.section-grid-image',
+    title,
+    description,
+    background,
+    sectionid,
+    grid: grid.map((imgs) => {
+      const {
+        images: { data = [] },
+      } = imgs;
+
+      const srcImg = data.map((img) => {
+        const { attributes: { url = '' } = {} } = img;
+
+        return url;
+      });
+
+      const altText = data.map((img) => {
+        const { attributes: { alternativeText = '' } = {} } = img;
+
+        return alternativeText;
+      });
+
+      return { srcImg, altText };
+    }),
   };
 };
