@@ -7,7 +7,13 @@ describe('map-data', () => {
     expect(pagesData.slug).toBe('');
     expect(pagesData.title).toBe('');
     expect(pagesData.sections).toEqual([]);
-    expect(pagesData.menu).toEqual({});
+    expect(pagesData.menu).toEqual({
+      link: '',
+      links: [],
+      newtab: false,
+      srcimg: '',
+      text: '',
+    });
   });
   it('should map data if there are data', () => {
     const pagesData = mapData([
