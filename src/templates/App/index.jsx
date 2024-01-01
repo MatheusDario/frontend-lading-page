@@ -6,6 +6,7 @@ import { mapData } from '../../api/map-data';
 import * as Styled from './styles';
 import P from 'prop-types';
 import { PageNotFound } from '../PageNotFound';
+import { Loading } from '../Loading';
 
 export const App = () => {
   const [data, setData] = useState([]);
@@ -22,7 +23,9 @@ export const App = () => {
         const json = await apiData.json();
 
         const pageData = mapData([json.data[0].attributes]);
+
         setData(pageData[0]);
+
         console.log(pageData[0]);
       } catch (e) {
         setData(undefined);
@@ -43,7 +46,7 @@ export const App = () => {
   }
 
   if (data && !data.slug) {
-    return <h1>Carregando....</h1>;
+    return <Loading />;
   }
 
   return <Base {...mockBase} />;
