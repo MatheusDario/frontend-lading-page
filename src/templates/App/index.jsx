@@ -5,22 +5,28 @@ import { mockBase } from '../Base/mock';
 import { mapData } from '../../api/map-data';
 import * as Styled from './styles';
 import P from 'prop-types';
+import { PageNotFound } from '../PageNotFound';
 
 export const App = () => {
   const [data, setData] = useState([]);
   const isMounted = useRef(true);
 
+  //http://localhost:1337/api/pages?populate=deep
+
   useEffect(() => {
     const load = async () => {
-      //Nome diferente do repositório
-      const apiData = await fetch(
-        'http://localhost:1337/api/pages?populate=deep',
-      );
-      const json = await apiData.json();
+      try {
+        const apiData = await fetch(
+          'http://localhost:1337/api/pages?populate=deep',
+        );
+        const json = await apiData.json();
 
-      const pageData = mapData([json.data[0].attributes]);
-      setData(pageData[0]);
-      console.log(pageData[0]);
+        const pageData = mapData([json.data[0].attributes]);
+        setData(pageData[0]);
+        console.log(pageData[0]);
+      } catch (e) {
+        setData(undefined);
+      }
     };
 
     if (isMounted.current === true) {
@@ -33,7 +39,7 @@ export const App = () => {
   }, []);
 
   if (data === undefined) {
-    return <h1>Página não encontrada</h1>;
+    return <PageNotFound />;
   }
 
   if (data && !data.slug) {
