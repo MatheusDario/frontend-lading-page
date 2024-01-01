@@ -13,7 +13,7 @@ export const Container = styled.div`
 export const Grid = styled.div`
   ${({ theme }) => css`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: ${theme.spacing.huge};
 
     ${theme.breakpoints.mobile} {

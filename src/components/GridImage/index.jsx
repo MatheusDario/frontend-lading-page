@@ -1,21 +1,28 @@
-import P from 'prop-types';
+/* eslint-disable react/prop-types */
+//import P from 'prop-types';
 import * as Styled from './styled';
 import { SectionBackground } from '../SectionBackground';
 import { Heading } from '../Heading';
 import { Text } from '../Text';
 
-export const GridImage = ({ title, description, grid, $background }) => {
+export const GridImage = ({
+  title,
+  description,
+  grid,
+  $background = false,
+  $sectionid = '',
+}) => {
   return (
-    <SectionBackground $background={$background}>
+    <SectionBackground $background={$background} $sectionid={$sectionid}>
       <Styled.Container>
         <Heading as="h2" $colordark={!$background}>
           {title}
         </Heading>
         <Text>{description}</Text>
         <Styled.Grid>
-          {grid.map((el) => (
-            <Styled.GridElement key={el.srcImg}>
-              <Styled.Image src={el.srcImg} alt={el.altText} />
+          {grid[0].srcImg.map((el) => (
+            <Styled.GridElement key={Math.random()}>
+              <Styled.Image src={el} alt={title} />
             </Styled.GridElement>
           ))}
         </Styled.Grid>
@@ -24,7 +31,8 @@ export const GridImage = ({ title, description, grid, $background }) => {
   );
 };
 
-GridImage.propTypes = {
+/*
+  GridImage.propTypes = {
   title: P.string.isRequired,
   description: P.string.isRequired,
   $background: P.bool,
@@ -35,3 +43,4 @@ GridImage.propTypes = {
     }),
   ),
 };
+*/

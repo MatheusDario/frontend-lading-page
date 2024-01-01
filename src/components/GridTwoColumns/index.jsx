@@ -9,9 +9,10 @@ export const GridTwoColumns = ({
   text,
   srcimg,
   $background = false,
+  $sectionid = '',
 }) => {
   return (
-    <SectionBackground $background={$background}>
+    <SectionBackground $background={$background} $sectionid={$sectionid}>
       <Styled.Container $background={$background}>
         <Styled.TextContainer>
           <Heading as="h2" $colordark={!$background}>
@@ -32,4 +33,5 @@ GridTwoColumns.propTypes = {
   text: P.string.isRequired,
   srcimg: P.string.isRequired,
   $background: P.bool,
+  $sectionid: P.string,
 };

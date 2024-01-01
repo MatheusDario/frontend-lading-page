@@ -4,9 +4,15 @@ import { SectionBackground } from '../SectionBackground';
 import { Heading } from '../Heading';
 import { Text } from '../Text';
 
-export const GridSection = ({ title, description, $background, grid }) => {
+export const GridSection = ({
+  title,
+  description,
+  $background = false,
+  grid,
+  $sectionid = '',
+}) => {
   return (
-    <SectionBackground $background={$background}>
+    <SectionBackground $background={$background} $sectionid={$sectionid}>
       <Styled.Container>
         <Heading as="h2" $colordark={!$background}>
           {title}
@@ -36,6 +42,7 @@ GridSection.propTypes = {
   title: P.string.isRequired,
   description: P.string.isRequired,
   $background: P.bool,
+  $sectionid: P.string,
   grid: P.arrayOf(
     P.shape({
       title: P.string.isRequired,

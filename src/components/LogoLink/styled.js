@@ -7,13 +7,14 @@ ${({ theme }) => css`
   align-items: center;
   text-decoration: none;
   color: inherit;
+  font-size: 3rem;
 
   ${theme.breakpoints.mobile} {
     font-size: ${theme.font.sizes.small};
   }
 
   > img {
-    max-height: 2.5rem;
+    height: 6rem;
   }
 `}
 `;
